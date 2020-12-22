@@ -13,7 +13,11 @@ private :
 class IntList {
 public:
     IntList (): Top(nullptr),Bot(nullptr),taille(0){}
-    //~IntList();
+    /~IntList(){
+        for (int i=taille;i>0;i--){
+            remove_back();
+        }
+    }
     bool is_empty(){
         return taille==0;
     }
