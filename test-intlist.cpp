@@ -2,6 +2,8 @@
 
 int main(){
     test_default_constructor_1();
+    test_print();
+    test_search();
     //test_add_front_1 ();
     //test_add_front_2 ();
     //test_add_back_1 ();
