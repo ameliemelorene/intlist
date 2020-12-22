@@ -58,7 +58,15 @@ public:
         }
     }
 
-    void print();
+    void print(){
+        cout<<'{';
+        IntCell* adr=Top;
+        for (int i=0;i<taille;i++) {
+            cout<<(*adr).valeur<<',';
+            adr=((*adr).After);
+        }
+        cout<<'}'<<endl;
+    }
     void remove_front();
     void remove_back();
     void remove(int value);
