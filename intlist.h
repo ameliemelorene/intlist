@@ -67,22 +67,38 @@ public:
         }
         cout<<'}'<<endl;
     }
-    void remove_front(){
+        void remove_front(){
         if (not (is_empty())){
-            IntCell* front=Top;
-            IntCell* new_front=(*front).After;
-            (*new_front).Before=nullptr;
-            delete front;
-            Top=new_front;
+            if (taille==1){
+                IntCell* front=Top;
+                delete front;
+                Top=nullptr;
+                Bot=nullptr;
+            }
+            else{
+                IntCell* front=Top;
+                IntCell* new_front=(*front).After;
+                (*new_front).Before=nullptr;
+                delete front;
+                Top=new_front;
+            }
         }
     }
     void remove_back(){
         if (not (is_empty())){
-            IntCell* back=Bot;
-            IntCell* new_back=(*back).Before;
-            (*new_back).After=nullptr;
-            delete back;
-            Top=new_back;
+            if (taille==1){
+                IntCell* front=Top;
+                delete front;
+                Top=nullptr;
+                Bot=nullptr;
+            }
+            else{
+                IntCell* back=Bot;
+                IntCell* new_back=(*back).Before;
+                (*new_back).After=nullptr;
+                delete back;
+                Top=new_back;
+            }      
         }
     }
     void remove(int value);
