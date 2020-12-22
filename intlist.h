@@ -86,7 +86,23 @@ public:
         }
     }
     void remove(int value);
-    bool search(int value);
+    bool search(int value){
+        if (is_empty()){
+            return 0;
+        }
+        else {
+            IntCell* cell=Top;
+            for (int i=0; i<taille;i++){
+                if ((*cell).valeur==value){
+                    return 1;
+                }
+                else{
+                    cell=(*cell).After;
+                }
+            }
+            return 0;
+        }
+    }
 
 private:
     int taille;
